@@ -21,6 +21,17 @@ class LinkedList:
         self.head = new_node
         self.count = self.count + 1
 
+    def get(self, index):
+        if self.count < index:
+            raise IndexError('Index not found in Linked list')
+        next_node = self.start
+        node_count = 0
+        while node_count < self.count:
+            if node_count == index:
+                return next_node.node_value
+            next_node = next_node.next
+            node_count = node_count + 1
+
     def print(self):
         if self.count == 1:
             print(str(self.start.node_value))
@@ -35,11 +46,11 @@ class LinkedList:
 
 
 linked_list = LinkedList(Node(1))
-linked_list.print()
-
 linked_list.add(2)
 linked_list.add(3)
 linked_list.add(50)
 linked_list.add(3000)
 linked_list.add(9)
 linked_list.print()
+
+print(linked_list.get(3))
