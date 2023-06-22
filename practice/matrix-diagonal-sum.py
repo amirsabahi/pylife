@@ -7,8 +7,13 @@ class Matrix:
         count_column = len(self.matrix[0])
         j = count_row
         total = 0
+        in_primary_diagonal = []
         for i in range(0, count_column):
-            total = total + self.matrix[i][count_row - j ] + self.matrix[i][j - 1]
+            if (self.matrix[i][count_row - j] == self.matrix[i][j - 1]) and self.matrix[i][
+                count_row - j] not in in_primary_diagonal:
+                total = total + self.matrix[i][count_row - j]
+            else:
+                total = total + self.matrix[i][count_row - j] + self.matrix[i][j - 1]
             j = j - 1
         return total
 
