@@ -3,6 +3,9 @@ class Matrix:
         self.matrix = matrix
 
     def diagonalSum(self):
+        """
+        Calculate diagonal sums of primary and secondary diagonals. The repeating numbers are excluded.
+        """
         count_row = len(self.matrix)
         count_column = len(self.matrix[0])
         j = count_row
