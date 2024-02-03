@@ -18,14 +18,12 @@ class DFS:
             return []
         left = DFS.traverse(root.left_node)
         right = DFS.traverse(root.right_node)
-        print(root.val)
+        
         res = []
-        if left:
-            res += left
-        if right:
-            res += right
-        result = res.append(root.val)
-        return res.append(root.val)
+        res += root.val
+        res += left
+        res += right
+        return res
 
 
 a = Node("a")
@@ -41,4 +39,4 @@ b.left_node = d
 b.right_node = e
 
 c.right_node = f
-DFS.traverse(a)
+print(DFS.traverse(a))
