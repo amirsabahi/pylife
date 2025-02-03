@@ -4,7 +4,7 @@ from typing import List
 class Node:
     val = None
     left_node = None
-    right_node = None;
+    right_node = None
 
     def __init__(self, val):
         self.val = val
